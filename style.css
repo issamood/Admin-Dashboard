@@ -15,13 +15,6 @@ body,html{
     overflow: auto;
 }
 
-.mainContainer div{
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    
-}
-
 .searchbarContainer{
     background-color: white;
     box-shadow: 2px 2px 5px rgb(148, 148, 148);
@@ -29,11 +22,65 @@ body,html{
     z-index:2;
 }
 
+/*Dashboard*/
 .dashboardContainer{
     background-color: rgb(0, 195, 255);
     grid-row: 1 / -1;
+    color: white;
+    font-weight: 600;
+
+
+    width: 100%;
+    min-width: 205px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 4%;
+}
+
+.dashboardContainer div{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin-bottom: 7px;
+}
+
+.dashboardContainer img{
+    max-width: 100%;
+    max-height: 100%;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
+#dashboard{
+    margin-bottom: 40px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#communities{
+    margin-bottom: 50px;
+}
+
+.dashboardText{
+    margin-left: 25px;
+}
+
+.iconContainer{
+    width: 30px;
+    height: 30px;
+    margin-right: 11px;
+    margin-left: 7px;
     
 }
+
+
+
+
 
 .contentContainer{
     background-color: rgb(230, 230, 230);
