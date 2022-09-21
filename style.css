@@ -1,10 +1,11 @@
-body,html{
+body,
+html {
     font-family: 'Poppins', sans-serif;
     padding: 0;
     margin: 0;
 }
 
-.mainContainer{
+.mainContainer {
     display: grid;
     width: 100%;
     height: 100vh;
@@ -16,17 +17,17 @@ body,html{
 }
 
 /*Searchbar*/
-.searchbarContainer{
+.searchbarContainer {
     background-color: white;
     box-shadow: 2px 2px 5px rgb(148, 148, 148);
-    position:relative;
-    z-index:2;
+    position: relative;
+    z-index: 2;
 }
 
-.searchbarGrid{
+.searchbarGrid {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 70px 1fr;
     width: 100%;
     height: 100%;
     padding: 20px;
@@ -48,28 +49,61 @@ input {
     margin-right: 1rem;
 }
 
-form button{
+form button {
     width: 20px;
     height: 20px;
     align-items: center;
     background-image: url(images/search.svg);
     background-size: 100%;
     background-color: Transparent;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     border: none;
     cursor: pointer;
 }
 
+/*Greetings and profile picture*/
+.greetingContainer {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: auto;
+}
+
+.greetingImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.greetingText {
+    margin-left: 25px;
+    align-items: center;
+    height: inherit;
+}
+
+.greetingText #firstText {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.greetingText #secondText {
+    font-size: 32px;
+    font-weight: 600;
+}
+
 /* New, Upload, Share Buttons*/
 .uploadButtons {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: flex-end;
     margin-right: 60px;
     margin-bottom: 15px;
+    height: 100px;
+    align-items: center;
 }
 
-.uploadButtons button{
+.uploadButtons button {
     background-color: rgb(0, 195, 255);
     border: none;
     color: white;
@@ -80,7 +114,7 @@ form button{
     height: 40px;
     width: 100px;
     border-radius: 40px;
-    
+
 }
 
 /*Profile*/
@@ -90,12 +124,12 @@ form button{
     margin-right: 5rem;
 }
 
-.profileName{
+.profileName {
     margin-top: 10px;
     font-weight: 600;
 }
 
-.notificationIcon{
+.notificationIcon {
     margin-top: 10px;
     width: 2rem;
     height: 2rem;
@@ -111,7 +145,7 @@ form button{
 }
 
 /*Dashboard*/
-.dashboardContainer{
+.dashboardContainer {
     background-color: rgb(0, 195, 255);
     grid-row: 1 / -1;
     color: white;
@@ -129,7 +163,7 @@ form button{
     padding-top: 4%;
 }
 
-.dashboardContainer div{
+.dashboardContainer div {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -137,42 +171,172 @@ form button{
     margin-bottom: 7px;
 }
 
-.dashboardContainer img{
+.dashboardContainer img {
     max-width: 100%;
     max-height: 100%;
     -webkit-filter: invert(100%);
     filter: invert(100%);
 }
 
-#dashboard{
+#dashboard {
     margin-bottom: 40px;
     align-items: center;
     justify-content: flex-start;
 }
 
-#communities{
+#communities {
     margin-bottom: 50px;
 }
 
-.dashboard .dashboardText{
+.dashboard .dashboardText {
     margin-left: 25px;
 }
 
-.iconContainer{
+.iconContainer {
     width: 30px;
     height: 30px;
     margin-right: 11px;
     margin-left: 7px;
 }
 
-.iconContainer, .dashboardText{
+.iconContainer,
+.dashboardText {
     cursor: pointer;
 }
 
+/*Content*/
 
-
-
-
-.contentContainer{
+.contentContainer {
     background-color: rgb(230, 230, 230);
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 1rem 2rem;
+    gap: 15px;
+}
+
+.projectsContainer {
+    grid-column: 1/2;
+    grid-row: 1/-1;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: auto 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 15px;
+}
+
+.projectsContainer h4 {
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    margin: 0;
+}
+
+.project {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(148, 148, 148);
+
+    display: grid;
+    grid-template-columns: 10px auto;
+    grid-template-rows: 2fr auto;
+    overflow: hidden;
+}
+
+.colorBlock {
+    background-color: rgb(255, 174, 0);
+    grid-column: 1/2;
+    grid-row: 1/-1;
+}
+
+.textBlock {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.iconBlock {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#icons {
+    width: 2rem;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.announcementsAndTrending {
+    grid-column: 2/3;
+    grid-row: 1/-1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.announcementsAndTrending h4 {
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+#text h5 {
+    margin: 0;
+}
+
+#text p {
+    margin: 0;
+    margin-top: 5px;
+}
+
+#divider {
+    background-color: rgb(194, 194, 194);
+    height: 1px;
+    width: auto;
+    margin: 2rem 0;
+}
+
+.announcementBlock,
+.trendingBlock {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(148, 148, 148);
+    padding: 2rem 2rem;
+    margin-bottom: 15px;
+}
+
+.trendingBlock{
+    display: flex;
+    flex-direction: column;
+}
+
+.trend{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    align-items: center;
+}
+
+#trendText{
+    opacity: 0.7;
+}
+
+.trend p {
+    margin-left: 20px;
+}
+.trend img{
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    object-fit: cover;
 }
